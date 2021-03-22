@@ -1,5 +1,6 @@
 	.arch armv8-a
-    	.text
+    .file	"chall_2.c"
+    .text
 	.align	2
 	.global	func1
 	.type	func1, %function
