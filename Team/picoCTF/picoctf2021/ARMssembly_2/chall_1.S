@@ -1,34 +1,41 @@
 	.arch armv8-a
-    	.text
+	.file	"chall_1.c"
+	.text
 	.align	2
-	.global	func1
-	.type	func1, %function
-func1:
+	.global	func
+	.type	func, %function
+func:
 	sub	sp, sp, #32
 	str	w0, [sp, 12]
-	str	wzr, [sp, 24]
-	str	wzr, [sp, 28]
-	b	.L2
-.L3:
-	ldr	w0, [sp, 24]
-	add	w0, w0, 3
+	mov	w0, 58
+	str	w0, [sp, 16]
+	mov	w0, 2
+	str	w0, [sp, 20]
+	mov	w0, 3
 	str	w0, [sp, 24]
-	ldr	w0, [sp, 28]
-	add	w0, w0, 1
+	ldr	w0, [sp, 20]
+	ldr	w1, [sp, 16]
+	lsl	w0, w1, w0
 	str	w0, [sp, 28]
-.L2:
+	ldr	w1, [sp, 28]
+	ldr	w0, [sp, 24]
+	sdiv	w0, w1, w0
+	str	w0, [sp, 28]
 	ldr	w1, [sp, 28]
 	ldr	w0, [sp, 12]
-	cmp	w1, w0
-	bcc	.L3
-	ldr	w0, [sp, 24]
+	sub	w0, w1, w0
+	str	w0, [sp, 28]
+	ldr	w0, [sp, 28]
 	add	sp, sp, 32
 	ret
-	.size	func1, .-func1
+	.size	func, .-func
 	.section	.rodata
 	.align	3
 .LC0:
-	.string	"Result: %ld\n"
+	.string	"You win!"
+	.align	3
+.LC1:
+	.string	"You Lose :("
 	.text
 	.align	2
 	.global	main
@@ -42,12 +49,20 @@ main:
 	add	x0, x0, 8
 	ldr	x0, [x0]
 	bl	atoi
-	bl	func1
 	str	w0, [x29, 44]
+	ldr	w0, [x29, 44]
+	bl	func
+	cmp	w0, 0
+	bne	.L4
 	adrp	x0, .LC0
 	add	x0, x0, :lo12:.LC0
-	ldr	w1, [x29, 44]
-	bl	printf
+	bl	puts
+	b	.L6
+.L4:
+	adrp	x0, .LC1
+	add	x0, x0, :lo12:.LC1
+	bl	puts
+.L6:
 	nop
 	ldp	x29, x30, [sp], 48
 	ret
