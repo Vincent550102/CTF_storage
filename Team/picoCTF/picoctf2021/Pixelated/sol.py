@@ -1,24 +1,48 @@
 from PIL import Image
+import numpy as np
+def vstack(images):
+    if len(images) == 0:
+        raise ValueError("Need 0 or more images")
+
+    if isinstance(images[0], np.ndarray):
+        images = [Image.fromarray(img) for img in images]
+    width = max([img.size[0] for img in images])
+    height = sum([img.size[1] for img in images])
+    stacked = Image.new(images[0].mode, (width, height))
+
+    y_pos = 0
+    for img in images:
+        stacked.paste(img, (0, y_pos))
+        y_pos += img.size[1]
+    return stacked
+
+
+def hstack(images):
+    if len(images) == 0:
+        raise ValueError("Need 0 or more images")
+
+    if isinstance(images[0], np.ndarray):
+        images = [Image.fromarray(img) for img in images]
+    width = sum([img.size[0] for img in images])
+    height = max([img.size[1] for img in images])
+    stacked = Image.new(images[0].mode, (width, height))
+
+    x_pos = 0
+    for img in images:
+        stacked.paste(img, (x_pos, 0))
+        x_pos += img.size[0]
+    return stacked
 
 img1 = Image.open('scrambled1.png')
 img2 = Image.open('scrambled2.png')
 
-img1.paste(img2)
-img1.show()
+#img1.paste(img2)
+#img2.show()
 
-img=img1
-width,height=img.size
-for i in range(0,width):
-    for j in range(0,height):
-        tmp=img.getpixel((i,j))
-        print(tmp)
-        if tmp[-1]%2==0:
-            img.putpixel((i,j),0)
-        else:
-            img.putpixel((i,j),255)
-#img.show()
-
-
+    
+img = Image.blend(img1, img2, 0.5)
+img.show()
+img.save('new.png')
 '''
 lena = img1
 pixsels = lena.load()
