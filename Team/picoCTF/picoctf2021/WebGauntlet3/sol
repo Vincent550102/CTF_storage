@@ -1,0 +1,1 @@
+SELECT username, password FROM users WHERE username='adm'||'in' AND password='' NOT IN (1)+'' 
