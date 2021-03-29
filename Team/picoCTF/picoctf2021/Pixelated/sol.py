@@ -1,37 +1,4 @@
-from PIL import Image
-import numpy as np
-def vstack(images):
-    if len(images) == 0:
-        raise ValueError("Need 0 or more images")
-
-    if isinstance(images[0], np.ndarray):
-        images = [Image.fromarray(img) for img in images]
-    width = max([img.size[0] for img in images])
-    height = sum([img.size[1] for img in images])
-    stacked = Image.new(images[0].mode, (width, height))
-
-    y_pos = 0
-    for img in images:
-        stacked.paste(img, (0, y_pos))
-        y_pos += img.size[1]
-    return stacked
-
-
-def hstack(images):
-    if len(images) == 0:
-        raise ValueError("Need 0 or more images")
-
-    if isinstance(images[0], np.ndarray):
-        images = [Image.fromarray(img) for img in images]
-    width = sum([img.size[0] for img in images])
-    height = max([img.size[1] for img in images])
-    stacked = Image.new(images[0].mode, (width, height))
-
-    x_pos = 0
-    for img in images:
-        stacked.paste(img, (x_pos, 0))
-        x_pos += img.size[0]
-    return stacked
+from PIL import Image,ImageEnhance
 
 img1 = Image.open('scrambled1.png')
 img2 = Image.open('scrambled2.png')
@@ -40,9 +7,12 @@ img2 = Image.open('scrambled2.png')
 #img2.show()
 
     
-img = Image.blend(img1, img2, 0.5)
-img.show()
-img.save('new.png')
+img = Image.blend(img2, img1, 0.5)
+
+enh_con = ImageEnhance.Contrast(img)
+contrast = 1005
+image_contrasted = enh_con.enhance(contrast)
+image_contrasted.save('flag.png')
 '''
 lena = img1
 pixsels = lena.load()
