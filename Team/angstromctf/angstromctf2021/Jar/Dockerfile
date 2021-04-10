@@ -5,4 +5,4 @@ COPY jar.py pickle.jpg ./
 ENV FLAG="actf{REDACTED}"
 EXPOSE 5000
 USER nobody
-CMD python jar.py
+CMD python jar.p
