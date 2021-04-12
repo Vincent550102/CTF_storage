@@ -24,5 +24,5 @@ for i in range(29):
         p = process(f'patched{i}')
         print(f'{i}: ', p.recv())
         p.close()
-        if i!=1:
+        if i not in (2,3):
             os.unlink(f'patched{i}')
