@@ -1,6 +1,3 @@
 <?php
-
-$data = @file_get_contents("www.google.com",'r');
-echo $data;
-
+var_dump(urldecode('1e8%00*-*'));
 ?>
