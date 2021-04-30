@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web 100</title>
+<style type="text/css">
+	body {
+		background:gray;
+		text-align:center;
+	}
+</style>
+</head>
+
+<body>
+	<h3>Please use port 51 to visit this site.</h3>	
+</body>
+</html>
