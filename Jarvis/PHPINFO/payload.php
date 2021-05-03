@@ -1,12 +1,8 @@
 <?php
 class OowoO {
-    public $mdzz;
+    public $mdzz="print_r(scandir(dirname(__FILE__)));";
     function __construct() {
-        $this->mdzz = 'print_r(scandir(dirname(__FILE__)));';
-    }
-    
-    function __destruct() {
-        eval($this->mdzz);
+        $this->mdzz = "print_r(scandir(dirname(__FILE__)));";
     }
 }
 
