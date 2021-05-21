@@ -1,9 +1,13 @@
 <?php
 	error_reporting(E_ALL^E_NOTICE^E_WARNING);
 	$search = isset($_GET['user_search']) ? $_GET['user_search'] : 'searchContent';
-	if($search === searchContent)
+    if(isset($_SERVER['QUERY_STRING'])){
+        echo ''.$_SERVER['QUERY_STRING'];
+
+    }
+    if($search === searchContent)
 	{
-		
+	    echo "NO";	
 	}
 	else if(strpos($_SERVER['QUERY_STRING'],'user_search') !==false)
 	{
