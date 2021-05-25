@@ -1,0 +1,25 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Sun May 23 15:38:25 2021
+Invocation: foremost PDF Steganography .pdf 
+Output directory: /home/vincent55/文件/CTF_storage/solo/14/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: PDF Steganography .pdf
+Start: Sun May 23 15:38:25 2021
+Length: 571 KB (584991 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000014.jpg 	      40 KB 	       7180 	 
+1:	00000000.pdf 	     571 KB 	          0 	 
+Finish: Sun May 23 15:38:25 2021
+
+2 FILES EXTRACTED
+	
+jpg:= 1
+pdf:= 1
+------------------------------------------------------------------
+
+Foremost finished at Sun May 23 15:38:25 2021

@@ -32,7 +32,7 @@ def index():
 @app.route("/login", methods=['POST'])
 def login():
     data = '{"showflag": false, "username": "%s", "password": "%s"}' % (
-        request.form["username"], request.form['password']
+
     )
     session['user_data'] = data
     print(data)
