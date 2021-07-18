@@ -1,0 +1,23 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Sat Jul 17 21:22:36 2021
+Invocation: foremost encoded.png 
+Output directory: /home/vincent55/文件/CTF_storage/Team/R2S/BarcodeinImage/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: encoded.png
+Start: Sat Jul 17 21:22:36 2021
+Length: 1 MB (1541455 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000000.png 	       1 MB 	          0 	  (2358 x 1179)
+Finish: Sat Jul 17 21:22:36 2021
+
+1 FILES EXTRACTED
+	
+png:= 1
+------------------------------------------------------------------
+
+Foremost finished at Sat Jul 17 21:22:36 2021
