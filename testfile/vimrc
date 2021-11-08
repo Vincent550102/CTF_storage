@@ -1,0 +1,136 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'file:///home/gmarik/path/to/plugin'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'https://github.com/scrooloose/nerdtree'
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+set nu
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set rnu
+    autocmd BufLeave,FocusLost,InsertEnter * set nornu
+augroup END
+
+:set cursorline
+:set tabstop=4
+:set shiftwidth=4
+:set ai
+:set mouse=a
+:set expandtab
+:set softtabstop=4 
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+"inoremap < <><Esc>i
+inoremap {} {}<Esc>i
+inoremap {<CR> {<CR>}<Esc>ko
+inoremap ) <C-R>=ClosePair(')')<CR>
+inoremap ] <C-R>=ClosePair(']')<CR>
+"inoremap > <C-R>=ClosePair('>')<CR>
+inoremap } <C-R>=ClosePair('}')<CR>
+inoremap " <C-R>=QuoteDelim('"')<CR>
+inoremap ' <C-R>=QuoteDelim("'")<CR>
+
+function ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else
+        return a:char
+    endif
+endf
+
+function QuoteDelim(char)
+    let line = getline('.')
+    let col = col('.')
+    if line[col - 2] == "\\"
+        "Inserting a quoted quotation mark into the string
+        return a:char
+    elseif line[col - 1] == a:char
+        "Escaping out of the string
+        return "\<Right>"
+    else
+        "Starting a string
+        return a:char.a:char."\<Esc>i"
+    endif
+endf
+
+map <f2> :NERDTreeToggle<cr>
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeWinPos='left'
+let g:NERDTreeSize=30
+let g:NERDTreeShowLineNumbers=1
+let g:NERDTreeHidden=0
+
+"nnoremap <F3> :NERDTreeToggle<CR> autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" C++ complier
+autocmd FileType cpp map <F8> <Esc>:w!<CR>:!compile %<CR>
+autocmd FileType cc map <F8> <Esc>:w!<CR>:!compile %<CR>
+autocmd FileType c map <F8> <Esc>:w!<CR>:!compile %<CR>
+
+" Color configuration
+hi CursorLine cterm=none ctermbg=DarkMagenta
+:hi LineNr cterm=bold ctermfg=DarkGrey ctermbg=NONE
+
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_collect_identifiers_from_tag_files=1
+let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_confirm_extra_conf=0
+let g:ycm_key_invoke_completion='<C-/>'
+let g:ycm_goto_buffer_command='new-or-existing-tab' "open new tabe when jump to definition
+let g:ycm_autoclose_preview_window_after_completion=1 " auto-close preview window after select a completion string
+let g:ycm_autoclose_preview_window_after_insertion=1 " close preview window after leaving insert mode
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>jdf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jdc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>st :YcmCompleter GetType<CR>
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+:set formatoptions+=r
+filetype indent on 
+hi Search cterm=reverse ctermbg=none ctermfg=none
+"set clipboard = unnamedplus
+set hlsearch
+set incsearch
+set history=500
+set laststatus=2
+
+set statusline=%#filepath#[%{expand('%:p')}]%#filetype#[%{strlen(&fenc)?&fenc:&enc},\ %{&ff},\ %{strlen(&filetype)?&filetype:'plain'}]%#filesize#%{FileSize()}%{IsBinary()}%=%#position#%c,%l/%L\ [%3p%%]
+
+hi filepath cterm=none ctermbg=238 ctermfg=40
+hi filetype cterm=none ctermbg=238 ctermfg=45
+hi filesize cterm=none ctermbg=238 ctermfg=225
+hi position cterm=none ctermbg=238 ctermfg=228
+set showcmd
+function IsBinary()
+    if (&binary == 0)
+        return ""
+    else
+        return "[Binary]"
+    endif
+endfunction
+
+function FileSize()
+    let bytes = getfsize(expand("%:p"))
+    if bytes <= 0
+        return "[Empty]"
+    endif
+    if bytes < 1024
+        return "[" . bytes . "B]"
+    elseif bytes < 1048576
+        return "[" . (bytes / 1024) . "KB]"
+    else
+        return "[" . (bytes / 1048576) . "MB]"
+    endif
+endfunction
