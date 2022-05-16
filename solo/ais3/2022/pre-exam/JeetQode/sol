@@ -1,0 +1,4 @@
+.[0:1]==.[-1:]
+
+walk(if type == "object" then {left:.right,right:.left} else . end)
+def recurse(exp):   if exp | has("value") then exp.value elif exp.op | contains("Add") then recurse(exp.left)+recurse(exp.right) elif exp.op | contains("Sub") then recurse(exp.left)-recurse(exp.right) elif exp.op | contains("Mult") then recurse(exp.left)*recurse(exp.right) else recurse(exp.left)/recurse(exp.right) end; recurse(.body)

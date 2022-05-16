@@ -1,0 +1,33 @@
+{
+  "id": "Ag8EAQAKCwAPAAwIBAoJAQ",
+  "links": [
+    {
+      "active": true,
+      "iden": "CwgODwQAAwwCBAcNBAcGBQ",
+      "created": 1534960753.141877,
+      "modified": 1534970458.090077,
+      "type": "link",
+      "title": "Example Domain",
+      "url": "https://example.com/"
+    },
+    {
+      "active": true,
+      "iden": "BAENAwEBAQQBAgMDBAcECA",
+      "created": 1534900109.6203609,
+      "modified": 1534953681.504821,
+      "type": "link",
+      "title": "IANA — IANA-managed Reserved Domains",
+      "url": "https://www.iana.org/domains/reserved"
+    },
+    {
+      "active": false,
+      "iden": "AAwHBwAICg4HAQ0JBAEBDA",
+      "created": 1534876719.416244,
+      "modified": 1534883458.6826198,
+      "type": "link",
+      "direction": "self",
+      "title": "RFC 2606 - Reserved Top Level DNS Names",
+      "url": "https://tools.ietf.org/html/rfc2606"
+    }
+  ]
+}
